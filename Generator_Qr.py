@@ -28,7 +28,7 @@ def Creat_Qr(text: str, view: int) -> str:
         qr_img.save(f'{FILE}{text}')
         if view == 1:
             webopen(FILE+text)  # mostra o Qr code na tela
-        return FILE
+        return FILE+text
     except FileNotFoundError:
         mkdir('output')
         Creat_Qr(text, view)
