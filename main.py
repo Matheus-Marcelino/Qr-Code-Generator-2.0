@@ -21,15 +21,15 @@ class Application(MDApp):
         if self.__ID.first_text.text != '':
             self.__ID.rewrite_text.text = self.__ID.first_text.text
 
-    def check_clear(self, *args):
+    def check_clear(self, *args) -> None:
         """Pega o valor da checkbox"""
         self.__value_clear = args[1]
 
-    def check_open_image(self, *args):
+    def check_open_image(self, *args) -> None:
         """Pega o valor da checkbox"""
         self.__value_open_image = args[1]
 
-    def __verify_text(self, mode: bool=True):
+    def __verify_text(self, mode: bool=True) -> None:
         """Verifica os textos nos fields
 
         Args:
