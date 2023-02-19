@@ -1,10 +1,7 @@
 from kivymd.app import MDApp
 from kivymd.app import Builder
-from kivy.uix.boxlayout import BoxLayout
-from kivymd.uix.floatlayout import MDFloatLayout
-from kivymd.uix.textfield import MDTextField
-from kivymd.uix.button import MDRectangleFlatButton
 from Generator_Qr import Creat_Qr
+
 
 class MainFrame(MDApp):
     def build(self):
@@ -13,9 +10,12 @@ class MainFrame(MDApp):
         self.__ID = self.__FILE.ids
         return self.__FILE
 
-    def generate(self):
-        path: str = Creat_Qr(self.__ID.rewrite_text.text,0)
-        self.__ID.img.source = path
+    def generate(self) -> None:
+        if self.__ID.rewrite_text.text != '':
+            path: str = Creat_Qr(self.__ID.rewrite_text.text,0)
+            self.__ID.img.color = (1, 1, 1, 1)
+            self.__ID.img.source = path
+
 
 if __name__ == '__main__':
     MainFrame().run()
