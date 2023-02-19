@@ -5,7 +5,7 @@ from webbrowser import open as webopen
 from qrcode.main import QRCode
 
 
-def Creat_Qr(text: str, view: int) -> str:
+def Creat_Qr(text: str, view: bool) -> str:
     """Cria o Qr Code
 
     Args:
