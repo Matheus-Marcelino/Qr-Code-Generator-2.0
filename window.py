@@ -1,6 +1,6 @@
 from kivymd.app import MDApp
 from kivymd.app import Builder
-from kivymd.uix.boxlayout import MDBoxLayout
+from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.button import MDRectangleFlatButton

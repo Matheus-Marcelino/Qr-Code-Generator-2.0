@@ -18,7 +18,6 @@ def Creat_Qr(text: str, view: int) -> str:
     """
     qr = QRCode()
     qr.add_data(text)
-
     if '.png' not in text:
         text = text + '.png'
     FILE: str = dirname(realpath(__file__)) + '\output\\'
@@ -31,8 +30,4 @@ def Creat_Qr(text: str, view: int) -> str:
         return FILE+text
     except FileNotFoundError:
         mkdir('output')
-        Creat_Qr(text, view)
-
-
-if __name__ == '__main__':
-    Creat_Qr('Test', 1)
+        return Creat_Qr(text, view)
