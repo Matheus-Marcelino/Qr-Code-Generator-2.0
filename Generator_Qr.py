@@ -12,6 +12,9 @@ def Creat_Qr(text: str, view: int) -> str:
         text (str): Texto que será inserido do Qr Code
         view (int): 1 -> mostra a imagem na tela
                     0 -> Não mostra a imagem na tela
+
+    Returns:
+        str: Caminho do arquivo
     """
     qr = QRCode()
     qr.add_data(text)
