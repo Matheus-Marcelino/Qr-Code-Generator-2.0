@@ -19,7 +19,8 @@ def Creat_Qr(text: str, view: int) -> str:
     qr = QRCode()
     qr.add_data(text)
 
-    text: str = text + '.png'
+    if '.png' not in text:
+        text = text + '.png'
     FILE: str = dirname(realpath(__file__)) + '\output\\'
 
     qr_img = qr.make_image()
