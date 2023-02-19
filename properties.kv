@@ -1,0 +1,28 @@
+BoxLayout:
+    orientation: 'horizontal'
+    FloatLayout:
+        MDTextField:
+            pos_hint:{'center_x': 0.5, 'center_y': 0.64}
+            id: text
+            size_hint_x: 0.77
+            mode: 'line'
+            hint_text: 'Text'
+            icon_right: 'pencil'
+            max_length_text_color: 'blue'
+        MDTextField:
+            pos_hint:{'center_x': 0.5, 'center_y': 0.45}
+            id: rewrite_text
+            size_hint_x: 0.77
+            mode: 'line'
+            hint_text: 'Rewrite Text'
+            icon_right: 'pencil'
+            max_length_text_color: 'blue'
+        MDRectangleFlatButton:
+            pos_hint:{'center_x': 0.5, 'center_y': 0.35}
+            text: 'Generate QR'
+            text_color: 'white'
+            md_bg_color: '#2096f2'
+            on_press: app.generate()
+
+    Image:
+        id: img
