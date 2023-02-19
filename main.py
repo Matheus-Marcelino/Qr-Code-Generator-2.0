@@ -46,4 +46,4 @@ class Application(MDApp):
 
 
 if __name__ == '__main__':
-    QrCodeGenerator().run()
+    Application().run()
