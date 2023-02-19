@@ -4,7 +4,7 @@ from kivy.core.window import Window
 from Generator_Qr import Creat_Qr
 
 
-class MainFrame(MDApp):
+class Application(MDApp):
     def build(self):
         Window.minimum_height, Window.minimum_width = 400, 755
         self.theme_cls.theme_style = 'Dark'
@@ -46,4 +46,4 @@ class MainFrame(MDApp):
 
 
 if __name__ == '__main__':
-    MainFrame().run()
+    QrCodeGenerator().run()
