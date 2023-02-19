@@ -23,8 +23,17 @@ class Application(MDApp):
     def check_open_image(self, *args):
         self.__value_open_image = args[1]
 
+    def __verify_text(self, mode: bool=True):
+        if mode:
+            self.__ID.first_text.error = self.__ID.rewrite_text.error = True
+            self.__ID.first_text.helper_text = self.__ID.rewrite_text.helper_text =\
+                'The fields have to be the same and contain something'
+        else:
+            self.__ID.first_text.error = self.__ID.rewrite_text.error = False
+            self.__ID.first_text.helper_text = self.__ID.rewrite_text.helper_text = ''
+
     def generate(self) -> None:
-        if self.__ID.rewrite_text.text != '':
+        if self.__ID.rewrite_text.text != '' and self.__ID.rewrite_text.text == self.__ID.first_text.text:
             try:
                 if isinstance(self.__value_open_image, bool):
                     if self.__value_open_image is True:
@@ -37,6 +46,10 @@ class Application(MDApp):
             path: str = Creat_Qr(self.__ID.rewrite_text.text, self.__verify)
             self.__ID.img.color = (1, 1, 1, 1)
             self.__ID.img.source = path
+            self.__verify_text(False)
+        else:
+            self.__verify_text()
+
         try:
             if self.__value_clear:
                 self.__ID.rewrite_text.text = self.__ID.first_text.text = ''
