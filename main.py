@@ -1,7 +1,9 @@
+"""Gera a interface
+"""
 from kivymd.app import MDApp
 from kivymd.app import Builder
 from kivy.core.window import Window
-from Generator_Qr import Creat_Qr
+from generator_qr import Creat_Qr
 
 
 class Application(MDApp):
