@@ -16,6 +16,9 @@ class MainFrame(MDApp):
             self.__ID.img.color = (1, 1, 1, 1)
             self.__ID.img.source = path
 
+    def copy(self) -> None:
+        self.__ID.rewrite_text.text = self.__ID.first_text.text
+
 
 if __name__ == '__main__':
     MainFrame().run()
