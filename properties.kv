@@ -8,7 +8,6 @@ BoxLayout:
             mode: 'line'
             hint_text: 'Text'
             icon_right: 'pencil'
-            max_length_text_color: 'blue'
         MDIconButton:
             pos_hint:{'center_x': 0.5, 'center_y': 0.53}
             icon_size: 35
@@ -21,9 +20,27 @@ BoxLayout:
             mode: 'line'
             hint_text: 'Rewrite Text'
             icon_right: 'pencil'
-            max_length_text_color: 'blue'
+
+        MDCheckbox:
+            id: clear
+            pos_hint:{'center_x': 0.667, 'center_y': 0.35}
+            size_hint: None, None
+            size: 20, 20
+            on_active: app.check_clear(*args)
+        Label:
+            text: 'Clear Text'
+            pos_hint:{'center_x': 0.78, 'center_y': 0.35}
+        MDCheckbox:
+            pos_hint:{'center_x': 0.15, 'center_y': 0.35}
+            size_hint: None, None
+            size: 20, 20
+            on_active: app.check_open_image(*args)
+        Label:
+            text: 'Open Image'
+            pos_hint:{'center_x': 0.284, 'center_y': 0.35}
+
         MDRectangleFlatButton:
-            pos_hint:{'center_x': 0.5, 'center_y': 0.35}
+            pos_hint:{'center_x': 0.5, 'center_y': 0.25}
             text: 'Generate QR'
             text_color: 'white'
             md_bg_color: '#2096f2'
