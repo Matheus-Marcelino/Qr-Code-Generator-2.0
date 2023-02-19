@@ -14,16 +14,26 @@ class Application(MDApp):
         return self.__FILE
 
     def copy(self) -> None:
+        """Copia o texto do primeiro field para o segundo
+        """
         if self.__ID.first_text.text != '':
             self.__ID.rewrite_text.text = self.__ID.first_text.text
 
     def check_clear(self, *args):
+        """Pega o valor da checkbox"""
         self.__value_clear = args[1]
 
     def check_open_image(self, *args):
+        """Pega o valor da checkbox"""
         self.__value_open_image = args[1]
 
     def __verify_text(self, mode: bool=True):
+        """Verifica os textos nos fields
+
+        Args:
+            mode (bool, optional): True -> para acionar o erro.
+                                   False -> para desfazer o erro.
+        """
         if mode:
             self.__ID.first_text.error = self.__ID.rewrite_text.error = True
             self.__ID.first_text.helper_text = self.__ID.rewrite_text.helper_text =\
@@ -33,6 +43,9 @@ class Application(MDApp):
             self.__ID.first_text.helper_text = self.__ID.rewrite_text.helper_text = ''
 
     def generate(self) -> None:
+        """
+        Gera o Qr Code e cria o caminho para a imagem na tela
+        """
         if self.__ID.rewrite_text.text != '' and self.__ID.rewrite_text.text == self.__ID.first_text.text:
             try:
                 if isinstance(self.__value_open_image, bool):
