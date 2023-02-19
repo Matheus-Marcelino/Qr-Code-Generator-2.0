@@ -14,7 +14,8 @@ class MainFrame(MDApp):
         return self.__FILE
 
     def generate(self):
-        Creat_Qr(self.__ID.rewrite_text.text,0)
+        path: str = Creat_Qr(self.__ID.rewrite_text.text,0)
+        self.__ID.img.source = path
 
 if __name__ == '__main__':
     MainFrame().run()
