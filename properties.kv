@@ -1,6 +1,10 @@
 BoxLayout:
     orientation: 'horizontal'
     FloatLayout:
+        MDIconButton:
+            pos_hint:{'center_x': 0.5, 'center_y': 0.85}
+            icon_size: 110
+            icon: 'qrcode'
         MDTextField:
             pos_hint:{'center_x': 0.5, 'center_y': 0.64}
             id: first_text
@@ -20,7 +24,6 @@ BoxLayout:
             mode: 'line'
             hint_text: 'Rewrite Text'
             icon_right: 'pencil'
-
         MDCheckbox:
             id: clear
             pos_hint:{'center_x': 0.667, 'center_y': 0.35}
