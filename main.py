@@ -1,10 +1,12 @@
 from kivymd.app import MDApp
 from kivymd.app import Builder
+from kivy.core.window import Window
 from Generator_Qr import Creat_Qr
 
 
 class MainFrame(MDApp):
     def build(self):
+        Window.minimum_height, Window.minimum_width = 400, 755
         self.theme_cls.theme_style = 'Dark'
         self.__FILE = Builder.load_file('properties.kv')
         self.__ID = self.__FILE.ids
