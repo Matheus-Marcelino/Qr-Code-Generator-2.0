@@ -22,7 +22,6 @@ class Application(MDApp):
 
     def check_open_image(self, *args):
         self.__value_open_image = args[1]
-        
 
     def generate(self) -> None:
         if self.__ID.rewrite_text.text != '':
