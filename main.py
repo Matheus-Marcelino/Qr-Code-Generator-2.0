@@ -30,6 +30,8 @@ class MainFrame(MDApp):
                 if isinstance(self.__value_open_image, bool):
                     if self.__value_open_image is True:
                         self.__verify = True
+                    else:
+                        self.__verify = False
             except AttributeError:
                 pass
 
