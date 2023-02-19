@@ -9,6 +9,11 @@ BoxLayout:
             hint_text: 'Text'
             icon_right: 'pencil'
             max_length_text_color: 'blue'
+        MDIconButton:
+            pos_hint:{'center_x': 0.5, 'center_y': 0.53}
+            icon_size: 35
+            icon: 'arrow-down-bold-circle'
+            on_press: app.copy()
         MDTextField:
             pos_hint:{'center_x': 0.5, 'center_y': 0.45}
             id: rewrite_text
