@@ -17,7 +17,7 @@ def Creat_Qr(text: str, view: bool) -> str:
         str: Caminho do arquivo
     """
     treated_text = text.replace('/', ' ')
-    treated_text = treated_text.replace('\\', ' ')
+    treated_text = treated_text.replace('\\', ' ') + '.png'
     
     qr = QRCode()
     qr.add_data(text)
