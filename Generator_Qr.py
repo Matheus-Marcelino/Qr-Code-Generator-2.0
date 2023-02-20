@@ -16,18 +16,23 @@ def Creat_Qr(text: str, view: bool) -> str:
     Returns:
         str: Caminho do arquivo
     """
+    treated_text = text.replace('/', ' ')
+    treated_text = treated_text.replace('\\', ' ')
+    
     qr = QRCode()
     qr.add_data(text)
+
     if '.png' not in text:
         text = text + '.png'
+
     FILE: str = dirname(realpath(__file__)) + '\output\\'
 
     qr_img = qr.make_image()
     try:
-        qr_img.save(f'{FILE}{text}')
+        qr_img.save(f'{FILE}{treated_text}')
         if view == 1:
-            webopen(FILE+text)  # mostra o Qr code na tela
-        return FILE+text
+            webopen(FILE+treated_text)  # mostra o Qr code na tela
+        return FILE+treated_text
     except FileNotFoundError:
         mkdir('output')
         return Creat_Qr(text, view)
